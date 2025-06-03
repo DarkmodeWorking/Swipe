@@ -1,9 +1,9 @@
-import Navbar from "@/components/header/navbar"
-import { Button } from "@/components/ui/button"
-import VideoCard from "@/components/videos/video-card"
-import { prisma } from "@/lib/prisma"
-import { currentUser } from "@clerk/nextjs/server"
-import Image from "next/image"
+import Navbar from "@/components/header/navbar";
+import { Button } from "@/components/ui/button";
+import VideoCard from "@/components/videos/video-card";
+import { prisma } from "@/lib/prisma";
+import { currentUser } from "@clerk/nextjs/server";
+import Image from "next/image";
 
 export default async function Home() {
   const user = await currentUser()
@@ -41,10 +41,10 @@ export default async function Home() {
     orderBy:{
       createdAt:'desc'
     }
-  })
+  });
 
   return (
-    <div className="h-screen overflow-y-scroll snap-y snap-mandatory">
+    <div className="h-screen overflow-y-scroll snap-y snap-mandatory scrollbar-hide">
       <div className="flex flex-col items-center">
         {videos.map((video) => (
           <div key={video.id} className="snap-start flex justify-center items-center h-screen">
@@ -53,5 +53,5 @@ export default async function Home() {
         ))}
       </div>
     </div>
-  )
+  );
 }
