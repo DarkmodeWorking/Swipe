@@ -4,7 +4,7 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import React, { useActionState, useState } from 'react'
 import { uploadVideoAction } from '@/actions/upload-video'
-import Upload from "@/components/upload";
+import Upload from "@/components/upload"
 import { Button } from '@/components/ui/button'
 import { Loader2 } from 'lucide-react'
 
